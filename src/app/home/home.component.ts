@@ -6,10 +6,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  itemcounter : number;
+  projecttext : string = "Angular Project";
+  projects = [];
 
   constructor() { }
 
   ngOnInit() {
+    this.itemcounter = this.projects.length;
+  }
+
+  additem() {
+    this.projects.push(this.projecttext);
+    this.projecttext = "";
+    this.itemcounter = this.projects.length;
+  }
+
+  removeitem(i) {
+    // this.projects.pop();
+    this.projects.splice(i, 1);
+    this.itemcounter = this.projects.length;
   }
 
 }
