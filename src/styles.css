@@ -1,24 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+html,
 body {
-    background: #2e9ce6;
-    padding: 3em;
-    font-family: initial 22px;
-    color: #ffffff;
+    font-family: sans-serif;
 }
 
-ul {
-    list-style-type: none;
-    margin: 0 0 2em 0;
-    padding: 0;
-}
-
-ul li {
-    display: inline;
-    margin-right: 30px;
-}
-
-a {
-    color: #000000;
-    text-decoration: none;
-    font-size: 24px;
+.mvh-100 {
+    min-height: 100vh;
 }
