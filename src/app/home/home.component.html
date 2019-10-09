@@ -23,7 +23,6 @@
     </div>
 
     <div class="col">
-        <p class="project-container" *ngFor="let item of projects; let i = index">Project List:</p>
-        {{ item }}
+        <p class="project-container" *ngFor="let item of projects; let i = index" (click) = "removeitem(i)">{{ item }}</p>
     </div>
 </div>
