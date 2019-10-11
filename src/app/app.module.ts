@@ -8,7 +8,8 @@ import { HomeComponent } from './home/home.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { PersonsComponent } from './persons/persons.component';
 import { HttpClientModule } from '@angular/common/http';
-import { AboutComponent } from './about/about.component'
+import { AboutComponent } from './about/about.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component'
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AboutComponent } from './about/about.component'
     HomeComponent,
     ProjectsComponent,
     PersonsComponent,
-    AboutComponent
+    AboutComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,
