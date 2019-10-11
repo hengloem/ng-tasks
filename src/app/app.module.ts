@@ -6,17 +6,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { PersonsComponent } from './persons/persons.component';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    PersonsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

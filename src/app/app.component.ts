@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { PersonService } from './person.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ProjectTasks';
+  persons = [];
+
+  constructor (private _personservice : PersonService) {}
+
+  ngOnInit() {
+    this._personservice.getData().subscribe (data => this.persons = data);
+  }
 }
