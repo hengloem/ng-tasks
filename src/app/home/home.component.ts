@@ -1,3 +1,4 @@
+import { model, TodoItem } from './../../Model/model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,23 +10,37 @@ export class HomeComponent implements OnInit {
   itemcounter : number;
   projecttext : string = "Angular Project";
   projects = [];
+  model = new model();
 
   constructor() { }
 
   ngOnInit() {
-    this.itemcounter = this.projects.length;
+    this.itemcounter = this.model.items.length;
+  }
+
+  // return user name
+  getName() {
+    return this.model.user;
+  }
+
+  // return all items
+  getTodoItems() {
+    return this.model.items;
   }
 
   additem() {
-    this.projects.push(this.projecttext);
-    this.projecttext = "";
-    this.itemcounter = this.projects.length;
+    if(this.projecttext != "") {
+      this.model.items.push(new TodoItem(this.projecttext, false));
+      this.itemcounter = this.model.items.length;
+    }else {
+      alert('Please input your task.');
+    }
   }
 
   removeitem(i) {
     // this.projects.pop();
-    this.projects.splice(i, 1);
-    this.itemcounter = this.projects.length;
+    this.model.items.splice(i, 1);
+    this.itemcounter = this.model.items.length;
   }
 
 }

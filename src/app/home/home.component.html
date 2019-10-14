@@ -1,25 +1,50 @@
 <div class="jumbotron">
-    <div class="row">
-        <div class="col">
-            <h1 class="display-5">Add ToDo List</h1>
-            <p class="lead">Use this tool to add & remove your task.</p>
-            <hr class="my-4">
-            <p>You can add multiple task for you dialy routien.</p>
+  <div class="row">
+    <div class="col">
+      <h1 class="display-5">Add ToDo List</h1>
+      <p class="lead">Use this tool to add your task.</p>
+      <hr class="my-4">
+      <p>You can add multiple task for you dialy routien.</p>
 
-            <form>
-                <input type="text" class="text form-control" name="projectname" placeholder="Please add task here."
-                    [(ngModel)]="projecttext">
-                <br>
-                <input type="submit" class="btn btn-primary" value="Add Task" (click)="additem()">
-            </form>
-        </div>
-
-        <div class="col">
-            <h1 class="display-5">ToDo List {{ itemcounter }}</h1>
-            <p class="lead">The list of all your tasks here.</p>
-            <hr class="my-4">
-            <p class="project-container" *ngFor="let item of projects; let i = index" (click)="removeitem(i)">{{ item }}
-            </p>
-        </div>
+      <form>
+        <input type="text" class="text form-control" name="projectname" placeholder="Please add task here."
+          [(ngModel)]="projecttext">
+        <br>
+        <input type="submit" class="btn btn-primary" value="Add Task" (click)="additem()">
+      </form>
     </div>
+  </div>
+
+  <br><br>
+  
+  <div class="row">
+    <div class="col">
+      <h1 class="display-5">{{ getName() }} - ToDo List {{ itemcounter }}</h1>
+      <p class="lead">The list of all your tasks. Click on row for remove.</p>
+      <hr class="my-4">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">N <sup>o</sup></th>
+            <th scope="col">Tasks</th>
+            <th scope="col">Action</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of getTodoItems(); let i = index" (click)="removeitem(i)">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ item.action }}</td>
+            <td>
+              <input type="checkbox" [(ngModel)]="item.done">
+            </td>
+            <td [ngSwitch]="item.done">
+              <span *ngSwitchCase="true">YES</span>
+              <span *ngSwitchDefault>NO</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>

@@ -7,7 +7,7 @@ import { PersonService } from './person.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ProjectTasks';
+  title = 'Project Tasks By Heng Loem';
   persons = [];
 
   constructor (private _personservice : PersonService) {}
