@@ -9,7 +9,8 @@ import { ProjectsComponent } from './projects/projects.component';
 import { PersonsComponent } from './persons/persons.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AboutComponent } from './about/about.component';
-import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component'
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { ProfilesComponent } from './profiles/profiles.component'
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component'
     ProjectsComponent,
     PersonsComponent,
     AboutComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    ProfilesComponent
   ],
   imports: [
     BrowserModule,

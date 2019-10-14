@@ -5,6 +5,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { PersonsComponent } from './persons/persons.component';
 import { AboutComponent } from './about/about.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { ProfilesComponent } from './profiles/profiles.component';
 
 
 const routes: Routes = [
@@ -23,6 +24,10 @@ const routes: Routes = [
   {
     path: 'about',
     component: AboutComponent
+  },
+  {
+    path: 'profiles',
+    component: ProfilesComponent
   },
   {
     path: '**',
